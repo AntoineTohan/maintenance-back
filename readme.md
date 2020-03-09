@@ -2,6 +2,18 @@
 
 Java Spring + Maven project. 
 
+
+## Configuration de l'environnement
+[Instalation et configuration d'un environnement de développement](docs/conf-env.md)
+
+
+## Jenkins
+[Instalation et configuration de Jenkins](docs/conf-jenkins.md)
+
+## SonarQube
+[Instalation et configuration de SonarQube](docs/conf-sonar.md)
+
+
 ## Procédure installation
 
 - Avoir un Mac/Linux OU Windows 10 PRO pour le temrinal shell / bash
