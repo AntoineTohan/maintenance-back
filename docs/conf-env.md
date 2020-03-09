@@ -1,6 +1,15 @@
 ## Installation et configuration d'un environnement de développement
 
 
+### Outils de développement JAVA
+Afin de pouvoir éxécuter le projet vous aurez des besoins des outils suivants : 
+
+- JDK Java 8
+- Git
+- Maven (possiblement intégré dans l'IDE)
+- IDE (Eclipse, NetBeans, IntelliJ...)
+
+Dés que vous avez ces outils, vous pouvez cloner le projet et le compilé.
 ### Docker
 
 Pour installer Docker sur Windows, il faut obligatoirement Windows 10 professionnel, sinon il faudra télécharger Docker ToolBox.
