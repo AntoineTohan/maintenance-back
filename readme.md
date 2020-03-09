@@ -6,14 +6,14 @@ L'intégration continue est sensiblement similaire à celle du front
 
 
 ## Configuration de l'environnement
-[Instalation et configuration d'un environnement de développement](docs/conf-env.md)
+[Installation et configuration d'un environnement de développement](docs/conf-env.md)
 
 
 ## Jenkins
-[Instalation et configuration de Jenkins](docs/conf-jenkins.md)
+[Installation et configuration de Jenkins](docs/conf-jenkins.md)
 
 ## SonarQube
-[Instalation et configuration de SonarQube](docs/conf-sonar.md)
+[Installation et configuration de SonarQube](docs/conf-sonar.md)
 
 
 
