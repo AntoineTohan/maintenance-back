@@ -1,6 +1,7 @@
 package com.opendata.back.opendataback.controller;
 
 import com.opendata.back.opendataback.entity.Data;
+import com.opendata.back.opendataback.exception.DataException;
 import com.opendata.back.opendataback.repository.DataRepository;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,12 @@ public class DataController {
         return dataRepository.findAll ();
     }
 
+    @GetMapping("/data/{id}")
+    public Data one(@PathVariable Long id) {
+        return dataRepository.findById(id)
+                .orElseThrow(() -> new DataException (id.toString ()));
+    }
+
     @PostMapping(value = "/data")
     public ResponseEntity<String> uploadCsvFile (@RequestParam("files") MultipartFile[] files) {
         try {
@@ -54,12 +61,10 @@ public class DataController {
         DocumentBuilder builder;
         try {
             builder = factory.newDocumentBuilder ();
-            Document doc = builder.parse (new InputSource (new StringReader (xmlString)));
-            return doc;
+            return builder.parse (new InputSource (new StringReader (xmlString)));
         } catch (Exception e) {
-            e.printStackTrace ();
+            throw new DataException (e.getMessage ());
         }
-        return null;
     }
 
     private static int countLines (String str) {
