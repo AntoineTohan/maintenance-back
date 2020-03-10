@@ -28,12 +28,15 @@ public class DataController {
     @GetMapping("/data")
     public Iterable<Data> all () {
         return dataRepository.findAll ();
+<<<<<<< HEAD
+=======
     }
 
     @GetMapping("/data/{id}")
     public Data one(@PathVariable Long id) {
         return dataRepository.findById(id)
                 .orElseThrow(() -> new DataException (id.toString ()));
+>>>>>>> refacto
     }
 
     @PostMapping(value = "/data")
@@ -61,6 +64,12 @@ public class DataController {
         DocumentBuilder builder;
         try {
             builder = factory.newDocumentBuilder ();
+<<<<<<< HEAD
+            Document doc = builder.parse (new InputSource (new StringReader (xmlString)));
+            return doc;
+        } catch (Exception e) {
+            e.printStackTrace ();
+=======
             return builder.parse (new InputSource (new StringReader (xmlString)));
         } catch (Exception e) {
             throw new DataException (e.getMessage ());
@@ -81,9 +90,30 @@ public class DataController {
             String value = dataExtractFromString[2];
             Data data = new Data (id, name, value);
             dataRepository.save (data);
+>>>>>>> refacto
         }
     }
 
+<<<<<<< HEAD
+    private static int countLines (String str) {
+        String[] lines = str.split ("\r\n|\r|\n");
+        return ((lines.length - 2) / 5);
+    }
+
+    private void extractAndSaveCVS (String content) {
+        String[] lines = content.split (System.getProperty ("line.separator"));
+        for (String line : lines) {
+            String[] dataExtractFromString = line.split (";");
+            Long id = new Long (dataExtractFromString[0]);
+            String name = dataExtractFromString[1];
+            String value = dataExtractFromString[2];
+            Data data = new Data (id, name, value);
+            dataRepository.save (data);
+        }
+    }
+
+=======
+>>>>>>> refacto
     private void extractAndSaveXML (String content) {
         Document doc = convertStringToXMLDocument (content);
         int linesNumber = countLines (content) + 1;
