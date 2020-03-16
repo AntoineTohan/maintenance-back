@@ -2,35 +2,22 @@
 
 Partie back du projet OpenData Paris API
 
-L'intégration continue est sensiblement similaire à celle du front
+## Sommaire
+
+- [Comment bien démarrer sur le projet](#pour-bien-demarrer-sur-le-projets)
+- [Les procédures GIT](#procédure-GIT)
+- [Configuration de l'environnement d'intégration continue](#intégration-continue)
+- [Configurer Jenkins](#jenkins)
+- [Configurer SonarQube](#sonarqube)
 
 ## Pour bien démarrer sur le projet
 
-### Outils de développement Java - SpringBoot
-
-
-Pour un nouveau développeur, il est conseillé de suivre la procédure suivante : 
-
-### Prérequis logiciel
-
-- Installer Java 8 (https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
-- Installer React (https://fr.reactjs.org/)
-- S'assurer de l'installation de React en tapant `npx --version` dans un terminal
-- Installer Git (https://git-scm.com)
-- S'assurer de l'installation de Git en tapant `git -version` dans un terminal
-- Si vous n'avez pas d'IDE à disposition, nous vous recommandons IntelliJ (https://www.jetbrains.com/fr-fr/idea/download/)
-
-Vous avez désormais tous les outils nécessaires
 
 ### Démarrer le projet
 
-- Cloner le projet avec git `git clone https://github.com/datskill/maintenance-front.git`
-- Positionnez vous dans le répertoire du projet `cd maintenance-front`
-- Dans le terminal, tapez `npm install` pour installer les dépendances du projet
-- Dans le terminal, tapez `npm run start`
-
-Le projet va démarrer et s'ouvrir dans une fenêtre de votre navigateur par défaut
-
+- Cloner le projet avec git `git clone https://github.com/AntoineTohan/maintenance-back.git`
+- Positionnez vous dans le répertoire du projet `cd maintenance-back`
+- Cliquer sur "Run" dans IntelliJ pour démarrer le projet. (Assurez-vous d'avoir installer les prérequis dans "Configurer un environnement de développement)
 ## Procédure GIT
 
 ### Pour développer une nouvelle feature
