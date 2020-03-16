@@ -6,20 +6,19 @@ L'intégration continue est sensiblement similaire à celle du front
 
 ## Pour bien démarrer sur le projet
 
-### Outils de développement React - TS
+### Outils de développement Java - SpringBoot
 
 
 Pour un nouveau développeur, il est conseillé de suivre la procédure suivante : 
 
 ### Prérequis logiciel
 
-- Installer NodeJS (https://nodejs.org)
-- S'assurer de l'installation de NodeJS en tapant `node -version` dans un terminal
+- Installer Java 8 (https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
 - Installer React (https://fr.reactjs.org/)
 - S'assurer de l'installation de React en tapant `npx --version` dans un terminal
 - Installer Git (https://git-scm.com)
 - S'assurer de l'installation de Git en tapant `git -version` dans un terminal
-- Si vous n'avez pas d'IDE à disposition, nous vous recommandons Visual Studio Code (https://code.visualstudio.com)
+- Si vous n'avez pas d'IDE à disposition, nous vous recommandons IntelliJ (https://www.jetbrains.com/fr-fr/idea/download/)
 
 Vous avez désormais tous les outils nécessaires
 
