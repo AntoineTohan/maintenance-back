@@ -45,7 +45,7 @@ Entrez le nom du build
 
 - Dans Repositories : entrez le lien de votre repository 
 
-Laissez les credential vident s si votre repository est public, sinon ajouter vos crédentials Github/Gitlab
+Laissez les credentials vident si votre repository est public, sinon ajoutez vos crédentials Github/Gitlab
 
 - Dans Branches to Build, laissez "**Master**"
 
