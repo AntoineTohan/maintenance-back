@@ -37,5 +37,15 @@ pipeline {
 
                               }
                         }
+        stage("Automatic Test") {
+            steps {
+                sh "mvn test"
+            }
+        }
+             }
+             post {
+                 always {
+                     junit 'build/reports/**/*.xml'
+                 }
              }
      }
