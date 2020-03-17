@@ -16,22 +16,24 @@ Rendez-vous à l'adresse : http://localhost:9000/
 
 - Dans la barre, au dessous de la barre de navigation cliquez sur "'**Marketplace**"
 
-- Dans le barre de recherche du Marketplace, recherchez "**SonarJS**" (SonarTS est inclus dans SonarJS)
+- Dans le barre de recherche du Marketplace, recherchez "**SonarJava**"
 
 - Cliquez sur "**Installer**", attendez que l'installation finisse puis rendez-vous sur la page d'accueil de SonarQube
 
 - Cliquez sur "**Create New Project**"
 
-- Dans "**project Key**", rentrez "**maintenance-front**"
+- Dans "**project Key**", rentrez "**maintenance-back**"
 
 - Cliquez sur le bouton "**Set up**"
 
 
-- Dans "**Generate a token**", entrez "**maintenance-front"**
+- Dans "**Generate a token**", entrez "**maintenance-back"**
 
-- Pour la question "**What's your project's main language**", répondez "**Other**"
+- Pour la question "**What's your project's main language**", répondez "**Java**"
 
-- Sélectionner l'**OS** correspondant au votre
+- Sélectionnez "**Maven**" pour le type du projet Java
+
+- Exécutez un build du projet sur IntelliJ
 
 - Copier/Coller la commande SonarQube et éxécuter la à la racine du projet. (Il vous faudra avoir **Sonar-Scanner** d'installer sur votre ordinateur)
 
