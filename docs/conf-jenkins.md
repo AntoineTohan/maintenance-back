@@ -81,6 +81,14 @@ Nous allons maintenant préparer la configuration de SonarQube sur Jenkins
 
 - Cliquez sur "**Save**" puis "**Apply**"
 
+- Retournez sur la page d'accueil "**Manage Jenkins**"
+
+- Cliquez sur "**Global Tool Configuration**"
+
+- Ajoutez un "**Sonar-Scanner**"
+
+- Ajoutez un Maven avec pour "Name" : "**maven-apache-3.6.3**", vérifiez que la version de Maven récupéré par Jenkins est bien la 3.6.3
+
 Jenkins est maintenant configuré. 
 
 Vous pouvez passer à l'installation de **SonarQube**
