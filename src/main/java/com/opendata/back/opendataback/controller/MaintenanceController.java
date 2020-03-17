@@ -18,27 +18,10 @@ public class MaintenanceController {
     private MaintenanceRepository maintenanceRepository;
     Long id = (long)1;
 
-    @GetMapping("/maintenance")
-    public Iterable<Maintenance> all () {
-        return maintenanceRepository.findAll ();
-    }
-
     @GetMapping("/maintenance/get-status")
     public Optional<Maintenance> getStatus () {
         Long id = (long)1;
         return maintenanceRepository.findById (id);
-    }
-
-    @GetMapping("/maintenance/status-maintenance")
-    public Maintenance onMaintenanceStatus () {
-        Maintenance maintenance = new Maintenance (id, true);
-        return maintenanceRepository.save (maintenance);
-    }
-
-    @GetMapping("/maintenance/status-prod")
-    public Maintenance onProdStatus () {
-        Maintenance maintenance = new Maintenance (id, false);
-        return maintenanceRepository.save (maintenance);
     }
 
     @EventListener(ApplicationReadyEvent.class)
