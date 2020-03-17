@@ -14,6 +14,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.StringReader;
@@ -58,9 +59,10 @@ public class DataController {
 
     private static Document convertStringToXMLDocument (String xmlString) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance ();
-        DocumentBuilder builder;
+        factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+        factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
         try {
-            builder = factory.newDocumentBuilder ();
+            DocumentBuilder builder = factory.newDocumentBuilder ();
             return builder.parse (new InputSource (new StringReader (xmlString)));
         } catch (Exception e) {
             throw new DataException (e.getMessage ());

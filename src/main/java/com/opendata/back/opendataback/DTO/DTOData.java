@@ -2,41 +2,37 @@ package com.opendata.back.opendataback.DTO;
 
 public class DTOData {
 
-    private Long id;
-    private String name;
-    private String value;
+    private Long DTOid;
+    private String DTOname;
+    private String DTOvalue;
 
     public DTOData (Long id, String name, String value) {
-        this.id = id;
-        this.name = name;
-        this.value = value;
+        this.DTOid = id;
+        this.DTOname = name;
+        this.DTOvalue = value;
     }
 
-    public DTOData () {
-
+    public Long getDTOId () {
+        return DTOid;
     }
 
-    public Long getId () {
-        return id;
+    public void setDTOId (Long id) {
+        this.DTOid = id;
     }
 
-    public void setId (Long id) {
-        this.id = id;
+    public String getDTOName () {
+        return DTOname;
     }
 
-    public String getName () {
-        return name;
+    public void setDTOName (String name) {
+        this.DTOname = name;
     }
 
-    public void setName (String name) {
-        this.name = name;
+    public String getDTOValue () {
+        return DTOvalue;
     }
 
-    public String getValue () {
-        return value;
-    }
-
-    public void setValue (String value) {
-        this.value = value;
+    public void setDTOValue (String value) {
+        this.DTOvalue = value;
     }
 }

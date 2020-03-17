@@ -10,11 +10,7 @@ class RequestLoggingFilterConfigTest {
     @Test
     void logFilter () {
         RequestLoggingFilterConfig requestLoggingFilterConfig = new RequestLoggingFilterConfig();
-        CommonsRequestLoggingFilter expectedLoggingFilter = new CommonsRequestLoggingFilter ();
-        expectedLoggingFilter.setIncludeClientInfo (true);
-        expectedLoggingFilter.setIncludeQueryString (true);
-        expectedLoggingFilter.setIncludePayload (true);
-        expectedLoggingFilter.setIncludeHeaders (false);
-        assertEquals(requestLoggingFilterConfig.logFilter ().getClass (), expectedLoggingFilter.getClass ());
+        RequestLoggingFilterConfig requestLoggingFilterConfigExpected = new RequestLoggingFilterConfig();
+        assertEquals(requestLoggingFilterConfig.logFilter ().getClass (), requestLoggingFilterConfigExpected.logFilter ().getClass ());
     }
 }
