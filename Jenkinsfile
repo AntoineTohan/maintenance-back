@@ -21,8 +21,8 @@ pipeline {
 
          stage("Building") {
                             steps {
-                                sh "mvn build"
-
+                                sh "mvn validate"
+                                sh "mvn compile"
                               }
                         }
          stage('Code Quality') {
