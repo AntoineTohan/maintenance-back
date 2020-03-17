@@ -2,7 +2,6 @@
 
 pipeline {
         agent any
-         tools {maven "maintenance-back"}
     stages {
         stage("Code Checkout") {
             steps {
