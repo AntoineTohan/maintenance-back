@@ -1,7 +1,7 @@
 // #!groovy
 
 pipeline {
-        agent any
+    agent any
     stages {
         stage("Code Checkout") {
             steps {
@@ -9,6 +9,19 @@ pipeline {
                 url: 'https://github.com/AntoineTohan/maintenance-back.git'
                   }
               }
+                       stage("Install Dependencies") {
+                                  steps {
+                                        sh "mvn install"
+
+                                       }
+                                }
+
+         stage("Building") {
+                            steps {
+                                sh "mvn build"
+
+                              }
+                        }
          stage('Code Quality') {
                    steps {
                        script {
@@ -23,19 +36,6 @@ pipeline {
                            }
                         }
 
-         stage("Install Dependencies") {
-                                  steps {
-                                        sh "mvn install"
-
-                                       }
-                                }
-
-         stage("Building") {
-                            steps {
-                                sh "mvn build"
-
-                              }
-                        }
         stage("Automatic Test") {
             steps {
                 sh "mvn test"
