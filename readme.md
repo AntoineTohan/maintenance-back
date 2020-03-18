@@ -6,7 +6,7 @@ Partie back du projet OpenData Paris API
 
 - [Comment bien démarrer sur le projet](#pour-bien-demarrer-sur-le-projets)
 - [Les procédures GIT](#procédure-GIT)
-- [Configuration de l'environnement d'intégration continue](#intégration-continue)
+- [Configuration de l'environnement de développement](#intégration-continue)
 - [Configurer Jenkins](#jenkins)
 - [Configurer SonarQube](#sonarqube)
 
@@ -80,7 +80,7 @@ Notre intégration continue se compose des outils suivants :
 Afin de pouvoir travailler dans de bonnes conditions, veillez à suivre les différentes documentations disponible afin d'avoir un environnement de développement optimal. 
 
 
-## Configuration de l'environnement
+## Configuration de l'environnement de développement
 [Installation et configuration d'un environnement de développement](docs/conf-env.md)
 
 
