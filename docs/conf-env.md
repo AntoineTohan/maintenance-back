@@ -10,6 +10,7 @@ Afin de pouvoir éxécuter le projet vous aurez des besoins des outils suivants 
 - IDE (Eclipse, NetBeans, IntelliJ...)
 
 Dés que vous avez ces outils, vous pouvez cloner le projet et le compilé.
+
 ### Docker
 
 Pour installer Docker sur Windows, il faut obligatoirement Windows 10 professionnel, sinon il faudra télécharger Docker ToolBox.
@@ -119,6 +120,18 @@ Docker est maintenant installé.
 - Tester l'installation: `docker-compose --version`
 
  Docker est maintenant installé.
+ 
+ 
+### Lancer la base MySQL
+  Afin de lancer la base MySQL, vous retrouverez dans le dossier "maintenance" un script "prepare_env.sh". 
+  
+  Si vous êtes sur Linux ou sur Windows avec un BASH vous devez : 
+  
+  - Executez la commande suivante : `chmod +x ./prepare_env.sh` pour donner les droits sur le fichier
+  
+  - Executer `./prepare_env.sh`. La base de données est désormais accessible à l'adresse suivante : http://localhost:3306
+  
+  Si vous êtes sur Windows et que vous n'avez pas de bash disponible, lancez "Docker-Desktop" et éxécutez les commandes du script une par une. 
 
 ### Jenkins
 Vous pouvez passez à l'étape de l'installation et de la confguration de Jenkins
