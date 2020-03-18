@@ -91,10 +91,3 @@ Afin de pouvoir travailler dans de bonnes conditions, veillez à suivre les diff
 [Installation et configuration de SonarQube](docs/conf-sonar.md)
 
 
-
-Si vous avez un terminal linux lancer ces commandes  :
-
-  Intégrer mySQL dans le dockerfile etc...
-```cd maintenance-back
-docker pull mysql:5.7
-docker run -p 3306:3306 --name opendata-db -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=opendata -d mysql:5.7
