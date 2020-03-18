@@ -133,7 +133,7 @@ Docker est maintenant installé.
   
   - Executer `./prepare_env.sh`. La base de données est désormais accessible à l'adresse suivante : **http://localhost:3306**
   
-  Si vous êtes sur Windows et que vous n'avez pas de bash disponible, lancez "**Docker-Desktop**" et éxécutez les commandes du script une par une. 
+  Si vous êtes sur Windows et que vous n'avez pas de bash disponible, lancez "**Docker ToolBox**" et éxécutez les commandes du script une par une. 
 
 ### Jenkins
 Vous pouvez passez à l'étape de l'installation et de la confguration de Jenkins

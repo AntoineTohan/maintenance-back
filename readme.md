@@ -9,6 +9,7 @@ Partie back du projet OpenData Paris API
 - [Configuration de l'environnement de développement](#intégration-continue)
 - [Configurer Jenkins](#jenkins)
 - [Configurer SonarQube](#sonarqube)
+- [Effectuer une maintenance](#maintenance)
 
 ## Pour bien démarrer sur le projet
 
@@ -89,5 +90,9 @@ Afin de pouvoir travailler dans de bonnes conditions, veillez à suivre les diff
 
 ## SonarQube
 [Installation et configuration de SonarQube](docs/conf-sonar.md)
+
+## Maintenance
+
+[Effectuer une maintenance de l'application](docs/maintenance.md)
 
 
