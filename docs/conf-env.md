@@ -127,6 +127,8 @@ Docker est maintenant installé.
   
   Si vous êtes sur Linux ou sur Windows avec un BASH vous devez : 
   
+  - Vous postionnez dans le dossier "**maintenance**" avec `cd maintenance`(en supposant que vous êtes à la racine du projet)
+  
   - Executez la commande suivante : `chmod +x ./prepare_env.sh` pour donner les droits sur le fichier
   
   - Executer `./prepare_env.sh`. La base de données est désormais accessible à l'adresse suivante : **http://localhost:3306**
