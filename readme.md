@@ -84,7 +84,7 @@ Aprés avoir push votre branche develop, vous devez créer une "Pull Request" su
 
 * La personne en question se chargera avec vous, d'analyser les changements et de vérifier que les bonnes pratiques ont bien été respectées. 
 
-* Si c'est le cas, la personne effectuera le merge de la Pull Request en cliquant sur le bouton "Merge Pull Requesrt"
+* Si c'est le cas, la personne effectuera le merge de la Pull Request en cliquant sur le bouton "Merge Pull Request"
 
 * S'il y a des erreurs ou des incohérence, il faut noter des commentaires dans les "changes" de Github avec une explication du pourquoi ça ne convient pas. Alors, la personne qui a créer la Pull Request doit reprendre sa branche, faire les modifications en conséquence et re-push. 
 
