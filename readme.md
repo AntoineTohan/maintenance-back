@@ -69,6 +69,29 @@ Essayez d’être le plus explicite possible dans le nommage des commit comme en
 
 **Pour la création d’un hotfix : [HOT] 1.1.1 to 1.1.2**
 
+## Merge Request
+
+La branche Master étant "Protected", vous ne pouvez pas push directement sur celle-ci. 
+
+Il faut effectuer une "Merge request" depuis votre branche de développement vers la branche master. 
+
+Pour tout le processus de commit, vous pouvez suivre la documentation "Procédure GIT"
+
+Aprés avoir push votre branche develop, vous devez créer une "Pull Request" sur Github. 
+
+* Vous devez choisir la personne qui fera une review de votre code
+
+* La personne en question se chargera avec vous, d'analyser les changements et de vérifier que les bonnes pratiques ont bien été respectées. 
+
+* Si c'est le cas, la personne effectuera le merge de la Pull Request en cliquant sur le bouton "Merge Pull Requesrt"
+
+* S'il y a des erreurs ou des incohérence, il faut noter des commentaires dans les "changes" de Github avec une explication du pourquoi ça ne convient pas. Alors, la personne qui a créer la Pull Request doit reprendre sa branche, faire les modifications en conséquence et re-push. 
+
+**/!\ Nous avons une intégration continue avec Jenkins, de ce fait ne mergez pas une branche qui n'a pas finis d'être buildé sur le Jenkins !**
+
+**/!\ De plus, quand vous avez mergez votre branche develop, vérifiez que le build de la branche "Master" sur Jenkins fonctionne toujours**
+
+
 
 ## Intégration continue
 
