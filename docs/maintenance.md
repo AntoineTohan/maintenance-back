@@ -24,3 +24,6 @@ Lancer une maintenance aura plusieurs effets :
 * Ouvrez le fichier "maintenance.sh"
 * Exécuter les commandes une par une
 
+## Possible Amélioration
+
+Il serait possible d'automatiser la maintenance de la base de données en créant une tâche dans le "**Cron**" du serveur qui héberge la base de données afin de déclencher une maintenance tous les X jours. 
