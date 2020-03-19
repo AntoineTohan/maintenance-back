@@ -1,0 +1,355 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "\"Spring Boot REST API for OpenData Paris\"",
+        "version": "1.0.0",
+        "title": "Spring Boot REST API",
+        "license": {
+            "name": "Apache License Version 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0\""
+        }
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "data-controller",
+            "description": "Data Controller"
+        },
+        {
+            "name": "maintenance-controller",
+            "description": "Maintenance Controller"
+        },
+        {
+            "name": "open-data-dataset-controller",
+            "description": "Open Data Dataset Controller"
+        },
+        {
+            "name": "open-data-datasets-controller",
+            "description": "Open Data Datasets Controller"
+        },
+        {
+            "name": "open-data-records-controller",
+            "description": "Open Data Records Controller"
+        }
+    ],
+    "paths": {
+        "/api/datasets/1.0/search/": {
+            "get": {
+                "tags": [
+                    "open-data-datasets-controller"
+                ],
+                "summary": "all",
+                "operationId": "allUsingGET_2",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "rows",
+                        "in": "query",
+                        "description": "rows",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "start",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/datasets/1.0/test-MSPR-epsi-montpellier/": {
+            "get": {
+                "tags": [
+                    "open-data-dataset-controller"
+                ],
+                "summary": "all",
+                "operationId": "allUsingGET_1",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/records/1.0/search/": {
+            "get": {
+                "tags": [
+                    "open-data-records-controller"
+                ],
+                "summary": "Récupérer la data sous format OpenData",
+                "operationId": "allUsingGET_3",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "rows",
+                        "in": "query",
+                        "description": "rows",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "rows",
+                        "in": "query",
+                        "description": "rows",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "start",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/data": {
+            "get": {
+                "tags": [
+                    "data-controller"
+                ],
+                "summary": "Récupérer toutes les Datas",
+                "operationId": "allUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Iterable«Data»"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "data-controller"
+                ],
+                "summary": "Uploader un CSV avec un fichier CSV ou XML",
+                "operationId": "uploadCsvFileUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "files",
+                        "in": "formData",
+                        "description": "files",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "file"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/data/{id}": {
+            "get": {
+                "tags": [
+                    "data-controller"
+                ],
+                "summary": "Récupérer une data avec un ID",
+                "operationId": "oneUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Data"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/maintenance/get-status": {
+            "get": {
+                "tags": [
+                    "maintenance-controller"
+                ],
+                "summary": "Récupérer le status de la maintenance",
+                "operationId": "getStatusUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Optional«Maintenance»"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "title": "Data"
+        },
+        "Iterable«Data»": {
+            "type": "object",
+            "title": "Iterable«Data»"
+        },
+        "Maintenance": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "status": {
+                    "type": "boolean"
+                }
+            },
+            "title": "Maintenance"
+        },
+        "Optional«Maintenance»": {
+            "type": "object",
+            "properties": {
+                "present": {
+                    "type": "boolean"
+                }
+            },
+            "title": "Optional«Maintenance»"
+        }
+    }
+}

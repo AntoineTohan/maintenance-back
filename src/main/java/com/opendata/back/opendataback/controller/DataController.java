@@ -3,6 +3,8 @@ package com.opendata.back.opendataback.controller;
 import com.opendata.back.opendataback.entity.Data;
 import com.opendata.back.opendataback.exception.DataException;
 import com.opendata.back.opendataback.repository.DataRepository;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,22 +23,26 @@ import java.io.StringReader;
 
 @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
+@Api(value="API pour les opérations sur les Data et les fichiers CSV ou XML.")
 public class DataController {
 
     @Autowired
     private DataRepository dataRepository;
 
+    @ApiOperation(value = "Récupérer toutes les Datas")
     @GetMapping("/data")
     public Iterable<Data> all () {
         return dataRepository.findAll ();
     }
 
+    @ApiOperation(value = "Récupérer une data avec un ID")
     @GetMapping("/data/{id}")
     public Data one(@PathVariable Long id) {
         return dataRepository.findById(id)
                 .orElseThrow(() -> new DataException (id.toString ()));
     }
 
+    @ApiOperation(value = "Uploader un CSV avec un fichier CSV ou XML")
     @PostMapping(value = "/data")
     public ResponseEntity<String> uploadCsvFile (@RequestParam("files") MultipartFile[] files) {
         try {
