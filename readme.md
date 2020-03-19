@@ -6,6 +6,7 @@ Partie back du projet OpenData Paris API
 
 - [Comment bien démarrer sur le projet](#pour-bien-demarrer-sur-le-projets)
 - [Les procédures GIT](#procédure-GIT)
+- [Recommendations sur les Merges](#Merge-Request)
 - [Configuration de l'environnement de développement](#intégration-continue)
 - [Configurer Jenkins](#jenkins)
 - [Configurer SonarQube](#sonarqube)
