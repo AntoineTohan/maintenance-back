@@ -18,13 +18,11 @@ pipeline {
 
                                        }
                                 }
-
-         stage("Building") {
-                            steps {
-                                sh "mvn validate"
-                                sh "mvn compile"
-                              }
-                        }
+        stage("Tests") {
+            steps {
+                sh "mvn test"
+            }
+        }
          stage('Code Quality') {
                    steps {
                        script {
@@ -38,16 +36,12 @@ pipeline {
                      }
                            }
                         }
-
-        stage("Automatic Test") {
-            steps {
-                sh "mvn test"
-            }
-        }
              }
-             //post {
-              //   always {
-               //      junit 'build/reports/**/*.xml'
-                 //}
-             //}
+            stage("Building") {
+                steps {
+                    sh "mvn validate"
+                    sh "mvn compile"
+                    }
+            }
      }
+ }    
