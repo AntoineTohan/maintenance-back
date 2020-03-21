@@ -4,7 +4,7 @@ Partie back du projet OpenData Paris API
 
 ## Sommaire
 
-- [Comment bien démarrer sur le projet](#pour-bien-demarrer-sur-le-projets)
+- [Comment bien démarrer sur le projet](#pour-bien-démarrer-sur-le-projet)
 - [Les procédures GIT](#procédure-GIT)
 - [Recommendations sur les Merges](#Merge-Request)
 - [Configuration de l'environnement de développement](#intégration-continue)
@@ -44,7 +44,7 @@ Partie back du projet OpenData Paris API
 -	Se positionner sur la branche Master
  -	Exécuter un `git pull`  pour être à jour avec le dépôt distant
  -	Exécuter un `git checkout -b hotfix/1.1.X` (où X est le Nième hotfix sur la version actuelle, ici 1.1) ex : `git checkout -b hotfix/1.1.1`
- -	Pour l’application FRONT-END, modifier la version du package.json, ex: `version ="1.1.0"`devient `version ="1.1.1"`
+ -	Modifier la <version> du Pom.XML, ex: `version ="1.1.0"`devient `version ="1.1.1"`
  -	Push les modifications (suivre la procédure pour développer une nouvelle feature)
  -	A partir de maintenant, pour chaque correction de bug, se placer sur la branche hotfix avec `git checkout hotfix/1.1.X` et tirer une nouvelle branche depuis celle-ci (`git checkout -b correction_bug`)
  -	Pour push, suivre la procédure pour « développer une nouvelle feature ». Cependant le pull/rebase se fera avec la branche hotfix/1.1.X

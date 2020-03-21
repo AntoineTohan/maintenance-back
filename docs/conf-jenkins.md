@@ -31,29 +31,19 @@ Maintenant, il faut créer un build Jenkins qui analyse le code.
 
 - Dans le menu principal de Jenkins, cliquez sur "**New Item**" dans le bandeau de gauche
 
-Entrez le nom du build
+Entrez le nom du build : "**maintenance-back**"
 
-- Cliquez sur "**Pipeline**"
+- Cliquez sur "**Multibranch Pipeline**"
 
 - Cliquez sur "**Ok**"
 
-- Dans la configuration du build, allez dans la section "**Pipeline**"
+- Dans la configuration du build, allez dans la section "**Branches Sources**"
 
-- Choissiez "**Pipeline script from SCM**"
+- Rentrez l'url du dépot git "**https://github.com/datskill/maintenance-front**" dans "**Repository HTTPS URL**"
 
-- Dans SCM, choissisez  "**Git**"
-
-- Dans Repositories : entrez le lien de votre repository 
-
-Laissez les credentials vident si votre repository est public, sinon ajoutez vos crédentials Github/Gitlab
-
-- Dans Branches to Build, laissez "**Master**"
-
-- Dans Script Path, éctivez "**Jenkinsfile**"
+- Dans la section "**Scan Repository Triggers**"  cochez la case "**Periodically if not otherwise run**"
 
 - Cliquez sur Save puis Apply
-
--Votre build Jenkins est maintenant configuré car le Jenkinsfile s'occupera de définir les différentes étapes de votre build
 
 Le build Jenkins éxécutera les étapes suivantes : 
 
@@ -61,6 +51,22 @@ Le build Jenkins éxécutera les étapes suivantes :
 - Analyse du code sur SonarQube (le build s'arrêtera si une erreur apparait sur Sonar)
 - Build de l'application
 - Exécution des tests
+
+Le jenkins analysera toutes les branches "actives" du projet mais aussi les Pull Request de Github
+
+**/!\ Nous utilions l'API Github, de ce fait il peut y avoir une file d'attente pour build.**
+
+Il reste cependant une manipulation à effectuer pour configurer Maven
+
+- Rendez-vous dans "**Manage Jenkins**"
+
+- Puis dans "**Global Tools Configuration**"
+
+- Cherchez la section "**Maven", cliquez sur "Add Maven Installation**"
+
+- Dans "**Name**", rentrez : "**apache-maven-3.6.3**"
+
+- Cliquez sur "**Apply**" puis "**Save**" pour enregistrer
 
 
 Nous allons maintenant préparer la configuration de SonarQube sur Jenkins
@@ -87,7 +93,7 @@ Nous allons maintenant préparer la configuration de SonarQube sur Jenkins
 
 - Ajoutez un "**Sonar-Scanner**"
 
-- Ajoutez un Maven avec pour "Name" : "**maven-apache-3.6.3**", vérifiez que la version de Maven récupéré par Jenkins est bien la 3.6.3
+- Dans l'input "**Name**", entrez "sonar-scanner" puis appliquez et enregistrez
 
 Jenkins est maintenant configuré. 
 
