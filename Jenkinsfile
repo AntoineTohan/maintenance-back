@@ -30,18 +30,16 @@ pipeline {
                           withSonarQubeEnv("sonar-scanner") {
                           sh "${tool("sonar-scanner")}/bin/sonar-scanner"
                                        }
-                     maxRetry = 200
-forloop (Integer i=0; i<maxRetry; i++){
-    try {
-        timeout(time: 10, unit: 'SECONDS') {
-            waitForQualityGate()
-        }
-    } catch(Exception e) {
-        if (i == maxRetry-1) {
-            throw e
-        }
-    }
-}
+                        sleep(10)
+                script{
+                    timeout(time: 10, unit: 'MINUTES') {
+                        def qg = waitForQualityGate abortPipeline: true
+                        if (qg.status != 'OK') {
+                            echo "Status: ${qg.status}"
+                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                        }
+                    }
+                }
                      }
                            }
                         }
