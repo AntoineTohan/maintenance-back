@@ -31,7 +31,7 @@ pipeline {
                           sh "${tool("sonar-scanner")}/bin/sonar-scanner"
                                        }
                      maxRetry = 200
-forloop (i=0; i<maxRetry; i++){
+forloop (Integer i=0; i<maxRetry; i++){
     try {
         timeout(time: 10, unit: 'SECONDS') {
             waitForQualityGate()
