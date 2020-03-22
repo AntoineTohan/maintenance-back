@@ -104,6 +104,7 @@
                         </goals>
                     </execution>
                     <execution>
+                        <phase>test</phase>
                         <id>jacoco-check</id>
                         <goals>
                             <goal>check</goal>
