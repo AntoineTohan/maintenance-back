@@ -12,17 +12,17 @@ pipeline {
                 url: 'https://github.com/AntoineTohan/maintenance-back.git'
                   }
               }
+                stage("Tests") {
+            steps {
+                sh "mvn test"
+            }
+        }
                        stage("Install Dependencies") {
                                   steps {
                                         sh "mvn install"
 
                                        }
                                 }
-        stage("Tests") {
-            steps {
-                sh "mvn test"
-            }
-        }
          stage('Code Quality') {
                    steps {
                        script {
